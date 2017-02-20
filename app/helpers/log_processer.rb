@@ -13,6 +13,24 @@ module LogProcesser
     /(\d)?\d:\d\d/
   end
 
+  #player
+
+  def client_user_info_changed
+    /ClientUserinfoChanged/
+  end
+
+  def client_disconnect
+    /ClientDisconnect/
+  end
+
+  def kill
+    /kill/
+  end
+
+  def ShutdownGame
+    /ShutdownGame/
+  end
+
   def self.game_start_row?(log)
     log =~ LogProcesser.init_game
   end
@@ -20,5 +38,7 @@ module LogProcesser
   def self.game_end_row?(log)
     log =~ LogProcesser.game_ends
   end
+
+
 
 end

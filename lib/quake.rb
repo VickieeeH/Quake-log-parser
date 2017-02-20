@@ -16,7 +16,7 @@ class Quake
 
      games = []
      init_game_line = 0
-     
+
      log_lines.each_with_index do |log_line, index|
        if LogProcesser.game_start_row?(log_line)
           init_game_line = index
@@ -28,6 +28,5 @@ class Quake
      end
 
     games
-    # binding.pry
    end
 end
