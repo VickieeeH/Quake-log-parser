@@ -6,19 +6,19 @@ module LogProcesser
   end
 
   def self.game_ends
-    /ShutdownGame/
+    /--------+/
   end
 
   def self.time_format
     /(\d)?\d:\d\d/
   end
 
-  def self.game_start_row(log)
-    log =~ LogProcesser.game_start_row
+  def self.game_start_row?(log)
+    log =~ LogProcesser.init_game
   end
 
-  def self.game_end_row(log)
-    log =~ LogProcesser.game_end_row
+  def self.game_end_row?(log)
+    log =~ LogProcesser.game_ends
   end
 
 end
